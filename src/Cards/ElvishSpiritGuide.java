@@ -6,6 +6,7 @@
 package Cards;
 
 import Simulation.Game;
+import Simulation.Mana;
 
 /**
  *
@@ -19,10 +20,16 @@ public class ElvishSpiritGuide extends Card {
     }
     
         public void play(Game game)
-    {
+    {       
         game.getCardsInHand().remove(this);
         game.getCardsInExile().add(this);
         game.setGreenMana(game.getGreenMana() + 1);
     }
+        
+      
+        @Override      public Mana getColor()
+      {
+          return Mana.GREEN;
+      }
     
 }

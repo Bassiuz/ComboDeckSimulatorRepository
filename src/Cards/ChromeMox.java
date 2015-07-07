@@ -28,9 +28,16 @@ public class ChromeMox extends Card {
         game.getCardsInPlay().add(this);
         game.getCardsInHand().remove(card);
         game.getCardsInExile().add(card);
-        
+        game.uppStormCount();
         manacolor = manaColorOfChoice;
     }
+     
+     public void playWithoutImprint(Game game)
+     {
+         game.getCardsInHand().remove(this);
+         game.getCardsInPlay().add(this);
+         game.uppStormCount();
+     }
     
     public void activate(Game game)
     {
@@ -87,6 +94,11 @@ public class ChromeMox extends Card {
         this.manacolor = manacolor;
     }
     
+      @Override
+      public Mana getColor()
+      {
+          return Mana.COLORLESS;
+      }
     
     
 }

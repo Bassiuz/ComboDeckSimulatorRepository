@@ -5,6 +5,9 @@
  */
 package Cards;
 
+import Simulation.Game;
+import Simulation.Mana;
+
 /**
  *
  * @author Bash
@@ -16,4 +19,14 @@ public class EmptyTheWarrens extends Card {
         this.setCardName("EmptyTheWarrens");
     }
     
+    public int play(Game game)
+    {
+        game.uppStormCount();
+        return game.getStormCount() * 2;
+    }
+    
+      @Override      public Mana getColor()
+      {
+          return Mana.RED;
+      }
 }

@@ -6,6 +6,7 @@
 package Cards;
 
 import Simulation.Game;
+import Simulation.Mana;
 
 /**
  *
@@ -19,7 +20,8 @@ public class TinderWall extends Card {
     }
     
     public void play(Game game)
-    {
+    {        game.uppStormCount();
+
         game.getCardsInHand().remove(this);
         game.getCardsInPlay().add(this);
         game.setGreenMana(game.getGreenMana() -1);
@@ -32,5 +34,10 @@ public class TinderWall extends Card {
         game.setRedMana(game.getRedMana() +2);
         
     }
+    
+              @Override      public Mana getColor()
+      {
+          return Mana.GREEN;
+      }
     
 }

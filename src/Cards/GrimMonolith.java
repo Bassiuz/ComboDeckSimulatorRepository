@@ -6,6 +6,7 @@
 package Cards;
 
 import Simulation.Game;
+import Simulation.Mana;
 
 /**
  *
@@ -21,7 +22,8 @@ public class GrimMonolith extends Card {
     }
     
     public void play(Game game)
-    {
+    {        game.uppStormCount();
+
         //PAY MANA IN ALGORITHM
         game.getCardsInHand().remove(this);
         game.getCardsInPlay().add(this);
@@ -43,6 +45,9 @@ public class GrimMonolith extends Card {
         this.tap = tap;
     }
     
-    
+              @Override      public Mana getColor()
+      {
+          return Mana.COLORLESS;
+      }
     
 }

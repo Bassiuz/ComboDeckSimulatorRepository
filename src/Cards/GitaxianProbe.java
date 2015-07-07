@@ -6,6 +6,7 @@
 package Cards;
 
 import Simulation.Game;
+import Simulation.Mana;
 
 /**
  *
@@ -19,7 +20,8 @@ public class GitaxianProbe extends Card {
     }
     
         public void playForMana(Game game)
-    {
+    {        game.uppStormCount();
+
         game.getCardsInHand().remove(this);
         game.getCardsInGraveyard().add(this);
         game.setBlueMana(game.getBlueMana() -1);
@@ -27,11 +29,16 @@ public class GitaxianProbe extends Card {
     }
         
     public void playForLife(Game game)
-    {
+    {        game.uppStormCount();
+
         game.getCardsInHand().remove(this);
         game.getCardsInGraveyard().add(this);
         game.setLifeTotal(game.getLifeTotal() - 2);
         game.drawCard();
     }
     
+          @Override      public Mana getColor()
+      {
+          return Mana.BLUE;
+      }
 }

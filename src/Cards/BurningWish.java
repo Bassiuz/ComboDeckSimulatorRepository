@@ -12,23 +12,25 @@ import Simulation.Mana;
  *
  * @author Bash
  */
-public class DesperateRitual extends Card {
+public class BurningWish extends Card {
     
-    public DesperateRitual()
+    public BurningWish()
     {
-        this.setCardName("DesperateRitual");
+        this.setCardName("BurningWish");
     }
     
-        public void play(Game game)
-    {        game.uppStormCount();
-
-        game.getCardsInHand().remove(this);
-        game.getCardsInGraveyard().add(this);
-        game.setRedMana(game.getRedMana() + 2);
-    }
         
-      @Override      public Mana getColor()
+    public void play(Game game)
+    {        
+        game.getCardsInHand().remove(this);
+        game.getCardsInExile().add(this);
+        game.getCardsInHand().add(new EmptyTheWarrens());
+
+    }
+    
+     @Override      public Mana getColor()
       {
           return Mana.RED;
       }
+    
 }

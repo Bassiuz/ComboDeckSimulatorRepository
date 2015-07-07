@@ -20,7 +20,8 @@ public class LotusPetal extends Card {
     }
     
         public void play(Game game)
-    {
+    {        game.uppStormCount();
+
         game.getCardsInHand().remove(this);
         game.getCardsInPlay().add(this);
     }
@@ -64,4 +65,9 @@ public class LotusPetal extends Card {
                 break;
         }
     }
+    
+              @Override      public Mana getColor()
+      {
+          return Mana.COLORLESS;
+      }
 }

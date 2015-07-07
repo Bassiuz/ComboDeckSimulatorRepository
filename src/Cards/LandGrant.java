@@ -6,6 +6,7 @@
 package Cards;
 
 import Simulation.Game;
+import Simulation.Mana;
 
 /**
  *
@@ -19,7 +20,8 @@ public class LandGrant extends Card {
     }
     
         public void play(Game game)
-    {
+    {        game.uppStormCount();
+
         //PAY MANA IN ALGORITHM
         game.getCardsInHand().remove(this);
         game.getCardsInGraveyard().add(this);
@@ -38,5 +40,16 @@ public class LandGrant extends Card {
         game.getCardsInDeck().remove(c);
 
     }
+        public void playWithoutFindingAnything(Game game)
+        {
+            game.uppStormCount();
+                game.getCardsInHand().remove(this);
+                game.getCardsInGraveyard().add(this);
+        }
+        
+                      @Override      public Mana getColor()
+      {
+          return Mana.GREEN;
+      }
      
 }

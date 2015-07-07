@@ -6,6 +6,7 @@
 package Cards;
 
 import Simulation.Game;
+import Simulation.Mana;
 
 /**
  *
@@ -19,7 +20,9 @@ public class RiteOfFlame extends Card {
     }
     
             public void play(Game game)
-    {
+    {        
+        
+        game.uppStormCount();
         int riteOfFlameInBin = 1;
         for(Card card :game.getCardsInGraveyard())
         {
@@ -33,5 +36,10 @@ public class RiteOfFlame extends Card {
         game.getCardsInGraveyard().add(this);
         game.setRedMana(game.getRedMana() + riteOfFlameInBin);
     }
+            
+                   @Override      public Mana getColor()
+      {
+          return Mana.RED;
+      }       
     
 }

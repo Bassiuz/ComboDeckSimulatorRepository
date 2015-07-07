@@ -22,6 +22,10 @@ public class Game {
     private int greenMana;
     private int whiteMana;
     private int colorlessMana;
+    
+    private boolean landDropMade = false;
+    private int stormCount = 0;
+    private int goblinTokens = 0;
 
     private ArrayList<Card> cardsInHand = new ArrayList<Card>();
     private ArrayList<Card> cardsInDeck = new ArrayList<Card>();
@@ -29,11 +33,40 @@ public class Game {
     private ArrayList<Card> cardsInGraveyard = new ArrayList<Card>();
     private ArrayList<Card> cardsInExile = new ArrayList<Card>();
 
-    private int lifeTotal;
-    private int opponentLifeTotal;
+    private int lifeTotal = 20;
+    private int opponentLifeTotal = 20;
 
-    
-    
+    private boolean triedToPlayLandGrant = false;
+    private boolean triedToPlayChromeMox = false;
+
+    Game()
+    {
+        
+    }
+
+    Game(Game game) {
+        this.redMana = game.getRedMana();
+        this.blueMana = game.getBlueMana();
+        this.blackMana = game.getBlackMana();
+        this.greenMana = game.getGreenMana();
+        this.whiteMana = game.getWhiteMana();
+        this.colorlessMana = game.getColorlessMana();
+        
+        this.landDropMade = game.isLandDropMade();
+        this.stormCount = game.getStormCount();
+        this.goblinTokens = game.getGoblinTokens();
+        cardsInHand.addAll(game.getCardsInHand());
+        cardsInDeck.addAll(game.getCardsInDeck());
+        cardsInPlay.addAll(game.getCardsInPlay());
+        cardsInGraveyard.addAll(game.getCardsInGraveyard());
+        cardsInExile.addAll(game.getCardsInExile());
+        
+        this.lifeTotal = game.getLifeTotal();
+        this.opponentLifeTotal = game.getOpponentLifeTotal();
+        this.triedToPlayLandGrant = game.isTriedToPlayLandGrant();
+        this.triedToPlayChromeMox = game.isTriedToPlayChromeMox();
+
+    }
     
     public void drawCard()
     {
@@ -42,6 +75,18 @@ public class Game {
         Card c = cardsInDeck.get(n);
         cardsInDeck.remove(c);
         cardsInHand.add(c);
+        
+        triedToPlayLandGrant = false;        
+        triedToPlayChromeMox = false;
+    }
+    
+    public Card revealCardFromDeck()
+    {
+        Random rand = new Random();
+        int  n = rand.nextInt(cardsInDeck.size());
+        Card c = cardsInDeck.get(n);
+        cardsInDeck.remove(c);
+        return c;
     }
     
     
@@ -58,6 +103,18 @@ public class Game {
         return i;
     }
     
+    public Card getCardFromPlayWithName(String name)
+    {
+        for(Card c : cardsInPlay)
+        {
+            if (c.getCardName().equals(name))
+            {
+                return c;
+            }
+        }
+        return null;
+    }
+    
     public Card getCardFromHandWithName(String name)
     {
         for(Card c : cardsInHand)
@@ -68,6 +125,59 @@ public class Game {
             }
         }
         return null;
+    }
+
+    public int getGoblinTokens() {
+        return goblinTokens;
+    }
+
+    public void setGoblinTokens(int goblinTokens) {
+        this.goblinTokens = goblinTokens;
+    }
+
+    
+    
+    public int getStormCount() {
+        return stormCount;
+    }
+    
+    public void uppStormCount() {
+        stormCount++;
+    }
+
+    public void setStormCount(int stormCount) {
+        this.stormCount = stormCount;
+    }
+
+    public boolean isTriedToPlayChromeMox() {
+        return triedToPlayChromeMox;
+    }
+
+    public void setTriedToPlayChromeMox(boolean triedToPlayChromeMox) {
+        this.triedToPlayChromeMox = triedToPlayChromeMox;
+    }
+
+    
+    
+    public boolean isLandDropMade() {
+        return landDropMade;
+    }
+
+    public void setLandDropMade(boolean landDropMade) {
+        this.landDropMade = landDropMade;
+    }
+
+    public boolean isTriedToPlayLandGrant() {
+        return triedToPlayLandGrant;
+    }
+
+    public void setTriedToPlayLandGrant(boolean triedToPlayLandGrant) {
+        this.triedToPlayLandGrant = triedToPlayLandGrant;
+    }
+    
+    public int getTotalMana()
+    {
+        return redMana + blueMana + whiteMana + blackMana + greenMana + colorlessMana;
     }
     
     public int getRedMana() {
@@ -174,6 +284,15 @@ public class Game {
         this.cardsInPlay = cardsInPlay;
     }
 
+    public String handToString()
+    {
+        String a = "";
+        for (Card card : cardsInHand)
+        {
+            a = a + " " + card.getCardName();
+        }
+        return a;
+    }
     
     
 }

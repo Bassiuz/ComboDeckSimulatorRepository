@@ -20,7 +20,8 @@ public class LionsEyeDiamond extends Card {
     }
     
         public void play(Game game)
-    {
+    {        game.uppStormCount();
+
         //PAY MANA IN ALGORITHM
         game.getCardsInHand().remove(this);
         game.getCardsInPlay().add(this);
@@ -67,4 +68,9 @@ public void activate(Game game, Mana manaColorOfChoice)
                 break;
         }
     }
+
+              @Override      public Mana getColor()
+      {
+          return Mana.COLORLESS;
+      }
 }

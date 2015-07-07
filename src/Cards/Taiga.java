@@ -73,6 +73,11 @@ public class Taiga extends Card {
         this.tap = tap;
     }
     
+        @Override      public Mana getColor()
+      {
+          return Mana.COLORLESS;
+      }
+    
     
     
 }

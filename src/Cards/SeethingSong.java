@@ -6,6 +6,7 @@
 package Cards;
 
 import Simulation.Game;
+import Simulation.Mana;
 
 /**
  *
@@ -19,9 +20,15 @@ public class SeethingSong extends Card {
     }
     
     public void play(Game game)
-    {
+    {        game.uppStormCount();
+
         game.getCardsInHand().remove(this);
         game.getCardsInGraveyard().add(this);
         game.setRedMana(game.getRedMana() + 2);
     }
+    
+                  @Override      public Mana getColor()
+      {
+          return Mana.RED;
+      }
 }

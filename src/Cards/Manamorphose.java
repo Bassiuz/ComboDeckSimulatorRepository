@@ -21,8 +21,9 @@ public class Manamorphose extends Card {
     
     
     public void play(Game game, Mana manaColorOfChoice1, Mana manaColorOfChoice2)
-    {
-        game.getCardsInPlay().remove(this);
+    {        game.uppStormCount();
+
+        game.getCardsInHand().remove(this);
         game.getCardsInGraveyard().add(this);
         
          switch (manaColorOfChoice1) {
@@ -93,5 +94,10 @@ public class Manamorphose extends Card {
                 break;
         }
     }
+    
+                  @Override      public Mana getColor()
+      {
+          return Mana.RED;
+      }
     
 }

@@ -6,6 +6,7 @@
 package Cards;
 
 import Simulation.Game;
+import Simulation.Mana;
 
 /**
  *
@@ -22,6 +23,11 @@ public class SimianSpiritGuide extends Card {
     {
         game.getCardsInHand().remove(this);
         game.getCardsInExile().add(this);
-        game.setGreenMana(game.getRedMana() + 1);
+        game.setRedMana(game.getRedMana() + 1);
     }
+    
+              @Override      public Mana getColor()
+      {
+          return Mana.RED;
+      }
 }
