@@ -3,11 +3,17 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+package Cards;
 
 /**
  *
  * @author Bash
  */
-public class Game {
+public class EmptyTheWarrens extends Card {
+    
+    public EmptyTheWarrens()
+    {
+        this.setCardName("EmptyTheWarrens");
+    }
     
 }

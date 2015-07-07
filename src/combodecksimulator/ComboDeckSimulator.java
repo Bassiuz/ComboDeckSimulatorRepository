@@ -5,6 +5,8 @@
  */
 package combodecksimulator;
 
+import Simulation.Simulation;
+
 /**
  *
  * @author Bash
@@ -16,6 +18,8 @@ public class ComboDeckSimulator {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        Simulation simulation = new Simulation();
+        simulation.simulateAncestrallLotusBolt();
     }
     
 }

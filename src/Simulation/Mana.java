@@ -3,11 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+package Simulation;
 
 /**
  *
  * @author Bash
  */
-public class Card {
-    
+public enum Mana {
+    BLACK, WHITE, GREEN, BLUE, RED, COLORLESS
 }
