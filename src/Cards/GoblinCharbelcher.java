@@ -61,7 +61,9 @@ public class GoblinCharbelcher extends Card {
             }
             else
             {
+                game.setBelcherActivatedButFailed(true);
                 return false;
+              
             }
         }
         else
@@ -72,6 +74,7 @@ public class GoblinCharbelcher extends Card {
             }
             else
             {
+                game.setBelcherActivatedButFailed(true);
                 return false;
             }
         }

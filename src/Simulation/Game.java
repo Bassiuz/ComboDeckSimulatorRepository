@@ -26,6 +26,7 @@ public class Game {
     private boolean landDropMade = false;
     private int stormCount = 0;
     private int goblinTokens = 0;
+    private boolean belcherActivatedButFailed;
 
     private ArrayList<Card> cardsInHand = new ArrayList<Card>();
     private ArrayList<Card> cardsInDeck = new ArrayList<Card>();
@@ -67,6 +68,16 @@ public class Game {
         this.triedToPlayChromeMox = game.isTriedToPlayChromeMox();
 
     }
+
+    public boolean isBelcherActivatedButFailed() {
+        return belcherActivatedButFailed;
+    }
+
+    public void setBelcherActivatedButFailed(boolean belcherActivatedButFailed) {
+        this.belcherActivatedButFailed = belcherActivatedButFailed;
+    }
+    
+    
     
     public void drawCard()
     {

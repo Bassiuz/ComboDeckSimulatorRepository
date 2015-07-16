@@ -13,35 +13,236 @@ import java.util.ArrayList;
  * @author Bash
  */
 public class Simulation {
+    
+    public void simulateBelcher()
+    {
+        double win = 0;
+        int lose = 0;
+        int noGoblins = 0;
+        int twoGoblins = 0;
+        int fourGoblins = 0;
+        int sixGoblins = 0;
+        int eightGoblins = 0;
+        int tenGoblins = 0;
+        int twelveGoblins = 0;
+        int fourteenGoblins = 0;
+        int sixteenGoblins = 0;
+        int eighteenGoblins = 0;
+        int twentyormoreGoblins = 0;
+        int belcherFails = 0;
 
-    public void simulateBelcher() {
+                double totalGames = 100000;
+
+                for (double i = 0; i < totalGames; i++) {
+
+                    Game game = new Game();
+                    //game.setCardsInDeck(getBelcherDeck(ChromeMox,GoblinCharbelcher,BurningWish,GrimMonolith,LionsEyeDiamond,LotusPetal,ElvishSpiritGuide,SimianSpiritGuide,TinderWall,DesperateRitual,PyreticRitual,SeethingSong,Taiga,EmptyTheWarrens,LandGrant,GitaxianProbe,RiteOfFlame,Manamorphose));
+                    game.setCardsInDeck(getBelcherDeck(3,4,4,0  ,4,4,4,4,4,4,4,4,1,3,4,4,4,1)); //list from starcitygames
+                    /// no empty game.setCardsInDeck(getBelcherDeck(4,4,0,4  ,4,4,4,4,4,4,4,4,1,0,4,4,4,3));
+                    game.drawCard();
+                    game.drawCard();
+                    game.drawCard();
+                    game.drawCard();
+                    game.drawCard();
+                    game.drawCard();
+                    game.drawCard();
+
+                    if (doIWinTurnOneBelcher(game)) {
+                        win++;
+                    } else {
+                        lose++;
+                    }
+                    if (game.getGoblinTokens() == 0)
+                    {
+                        noGoblins++;
+                    } else if (game.getGoblinTokens() == 2)
+                    {
+                        twoGoblins++;
+                    }else if (game.getGoblinTokens() == 4)
+                    {
+                        fourGoblins++;
+                    }else if (game.getGoblinTokens() == 6)
+                    {
+                        sixGoblins++;
+                    }else if (game.getGoblinTokens() == 8)
+                    {
+                        eightGoblins++;
+                    }else if (game.getGoblinTokens() == 10)
+                    {
+                        tenGoblins++;
+                    }else if (game.getGoblinTokens() == 12)
+                    {
+                        twelveGoblins++;
+                    }else if (game.getGoblinTokens() == 14)
+                    {
+                        fourteenGoblins++;
+                    }else if (game.getGoblinTokens() == 16)
+                    {
+                        sixteenGoblins++;
+                    }else if (game.getGoblinTokens() == 18)
+                    {
+                        eighteenGoblins++;
+                    }else if (game.getGoblinTokens() >= 20)
+                    {
+                        twentyormoreGoblins++;
+                    }
+                    
+                    if (game.isBelcherActivatedButFailed())
+                    {
+                        belcherFails++;
+                    }
+                }
+                
+                System.out.println("Total games won:" + Double.toString(win));
+                System.out.println("Total games lost:" + Integer.toString(lose));
+                System.out.println("BelcherFails:" + Integer.toString(belcherFails));
+                System.out.println("Percentage Games Won:" + Double.toString((win*100)/totalGames));
+                System.out.println("Times no goblins made:" + Integer.toString(noGoblins));
+                System.out.println("Times 2 goblins made:" + Integer.toString(twoGoblins));
+                System.out.println("Times 4 goblins made:" + Integer.toString(fourGoblins));
+                System.out.println("Times 6 goblins made:" + Integer.toString(sixGoblins));
+                System.out.println("Times 8 goblins made:" + Integer.toString(eightGoblins));
+                System.out.println("Times 10 goblins made:" + Integer.toString(tenGoblins));
+                System.out.println("Times 12 goblins made:" + Integer.toString(twelveGoblins));
+                System.out.println("Times 14 goblins made:" + Integer.toString(fourteenGoblins));
+                System.out.println("Times 16 goblins made:" + Integer.toString(sixteenGoblins));
+                System.out.println("Times 18 goblins made:" + Integer.toString(eighteenGoblins));
+                System.out.println("Times 20+ goblins made:" + Integer.toString(twentyormoreGoblins));
+
+
+                
+    }
+    
+    public void simulateBelcherWithMulligan()
+    {
+        int totalGames = 1000;
+        ArrayList<Double> percentageGamesWon = new ArrayList<Double>();
+        ArrayList<Double> averageGoblinsMade = new ArrayList<Double>();
+
+        
+        
+        
+        for (int i = 1; i < 7; i++) {
+            int win = 0;
+            int lose = 0;
+             int noGoblins = 0;
+          int twoGoblins = 0;
+        int fourGoblins = 0;
+        int sixGoblins = 0;
+        int eightGoblins = 0;
+        int tenGoblins = 0;
+        int twelveGoblins = 0;
+        int fourteenGoblins = 0;
+        int sixteenGoblins = 0;
+        int eighteenGoblins = 0;
+        int twentyormoreGoblins = 0;
+        int totalGoblins = 0;
+        int belcherFails = 0;
+            
+                for (int g = 0; g < totalGames; g++) {
+
+                    Game game = new Game();
+                    //game.setCardsInDeck(getBelcherDeck(ChromeMox,GoblinCharbelcher,BurningWish,GrimMonolith,LionsEyeDiamond,LotusPetal,ElvishSpiritGuide,SimianSpiritGuide,TinderWall,DesperateRitual,PyreticRitual,SeethingSong,Taiga,EmptyTheWarrens,LandGrant,GitaxianProbe,RiteOfFlame,Manamorphose));
+                    game.setCardsInDeck(getBelcherDeck(3,4,4,0  ,4,4,4,4,4,4,4,4,1,3,4,4,4,1)); //list from starcitygames
+                    /// no empty game.setCardsInDeck(getBelcherDeck(4,4,0,4  ,4,4,4,4,4,4,4,4,1,0,4,4,4,3));
+                    
+                    for (int j = 0; j < i; j++) {
+                    game.drawCard();
+                    }
+
+
+                    if (doIWinTurnOneBelcher(game)) {
+                        win++;
+                    } else {
+                        lose++;
+                    }
+                    totalGoblins = totalGoblins + game.getGoblinTokens();
+                    
+                    if (game.getGoblinTokens() == 0)
+                    {
+                        noGoblins++;
+                    } else if (game.getGoblinTokens() == 2)
+                    {
+                        twoGoblins++;
+                    }else if (game.getGoblinTokens() == 4)
+                    {
+                        fourGoblins++;
+                    }else if (game.getGoblinTokens() == 6)
+                    {
+                        sixGoblins++;
+                    }else if (game.getGoblinTokens() == 8)
+                    {
+                        eightGoblins++;
+                    }else if (game.getGoblinTokens() == 10)
+                    {
+                        tenGoblins++;
+                    }else if (game.getGoblinTokens() == 12)
+                    {
+                        twelveGoblins++;
+                    }else if (game.getGoblinTokens() == 14)
+                    {
+                        fourteenGoblins++;
+                    }else if (game.getGoblinTokens() == 16)
+                    {
+                        sixteenGoblins++;
+                    }else if (game.getGoblinTokens() == 18)
+                    {
+                        eighteenGoblins++;
+                    }else if (game.getGoblinTokens() >= 20)
+                    {
+                        twentyormoreGoblins++;
+                    }
+                    
+                    if (game.isBelcherActivatedButFailed())
+                    {
+                        belcherFails++;
+                    }
+                }
+                
+                System.out.println("Percentage Games Won:" + Double.toString((win*100)/totalGames));
+                System.out.println("Average Amount Goblins:" + Double.toString(totalGoblins/totalGames));
+
+                
+        }       
+    }
+    
+    public int simulateBelcherWithHand(ArrayList<Card> hand)
+    {
+        int amountWins = 0;
+        
+        return amountWins;
+    }
+    
+    
+
+    public void simulateMassBelcher() {
         ArrayList<Card> winningDeck = new ArrayList<Card>();
         int highestWins = 0;
 
-        for (int ChromeMox = 0; ChromeMox < 4; ChromeMox++) {
-            for (int GoblinCharbelcher = 0; GoblinCharbelcher < 4; GoblinCharbelcher++) {
-                for (int BurningWish = 0; BurningWish < 4; BurningWish++) {
-                    for (int GrimMonolith = 0; GrimMonolith < 4; GrimMonolith++) {
-                        for (int LionsEyeDiamond = 0; LionsEyeDiamond < 4; LionsEyeDiamond++) {
-                            for (int LotusPetal = 0; LotusPetal < 4; LotusPetal++) {
-                                for (int ElvishSpiritGuide = 0; ElvishSpiritGuide < 4; ElvishSpiritGuide++) {
-                                    for (int SimianSpiritGuide = 0; SimianSpiritGuide < 4; SimianSpiritGuide++) {
-                                        for (int TinderWall = 0; TinderWall < 4; TinderWall++) {
-                                            for (int DesperateRitual = 0; DesperateRitual < 4; DesperateRitual++) {
-                                                for (int PyreticRitual = 0; PyreticRitual < 4; PyreticRitual++) {
-                                                    for (int SeethingSong = 0; SeethingSong < 4; SeethingSong++) {
-                                                        for (int Taiga = 0; Taiga < 2; Taiga++) {
-                                                            for (int EmptyTheWarrens = 0; EmptyTheWarrens < 4; EmptyTheWarrens++) {
-                                                                for (int LandGrant = 0; LandGrant < 4; LandGrant++) {
-                                                                    for (int GitaxianProbe = 0; GitaxianProbe < 4; GitaxianProbe++) {
-                                                                        for (int RiteOfFlame = 0; RiteOfFlame < 4; RiteOfFlame++) {
-                                                                            for (int Manamorphose = 0; Manamorphose < 4; Manamorphose++) {
+        for (int ChromeMox = 4; ChromeMox <= 4; ChromeMox++) {
+            for (int GoblinCharbelcher = 4; GoblinCharbelcher <= 4; GoblinCharbelcher++) {
+                for (int BurningWish = 0; BurningWish <= 4; BurningWish++) {
+                    for (int GrimMonolith = 0; GrimMonolith <= 4; GrimMonolith++) {
+                        for (int LionsEyeDiamond = 0; LionsEyeDiamond <= 4; LionsEyeDiamond++) {
+                            for (int LotusPetal = 4; LotusPetal <= 4; LotusPetal++) {
+                                for (int ElvishSpiritGuide = 4; ElvishSpiritGuide <= 4; ElvishSpiritGuide++) {
+                                    for (int SimianSpiritGuide = 4; SimianSpiritGuide <= 4; SimianSpiritGuide++) {
+                                        for (int TinderWall = 0; TinderWall <= 4; TinderWall++) {
+                                            for (int DesperateRitual = 0; DesperateRitual <= 4; DesperateRitual++) {
+                                                for (int PyreticRitual = 0; PyreticRitual <= 4; PyreticRitual++) {
+                                                    for (int SeethingSong = 4; SeethingSong <= 4; SeethingSong++) {
+                                                        for (int Taiga = 0; Taiga <= 2; Taiga++) {
+                                                            for (int EmptyTheWarrens = 0; EmptyTheWarrens <= 3; EmptyTheWarrens++) {
+                                                                for (int LandGrant = 0; LandGrant <= 4; LandGrant++) {
+                                                                    for (int GitaxianProbe = 0; GitaxianProbe <= 4; GitaxianProbe++) {
+                                                                        for (int RiteOfFlame = 0; RiteOfFlame <= 4; RiteOfFlame++) {
+                                                                            for (int Manamorphose = 0; Manamorphose <= 4; Manamorphose++) {
                                                                                 ArrayList<Card> deck = getBelcherDeck(ChromeMox,GoblinCharbelcher,BurningWish,GrimMonolith,LionsEyeDiamond,LotusPetal,ElvishSpiritGuide,SimianSpiritGuide,TinderWall,DesperateRitual,PyreticRitual,SeethingSong,Taiga,EmptyTheWarrens,LandGrant,GitaxianProbe,RiteOfFlame,Manamorphose);
                                                                                 if (deck.size() == 60)
                                                                                 {
                                                                                     int win = 0;
                 int lose = 0;
-                int totalGames = 10;
+                int totalGames = 1000;
                 for (int i = 0; i < totalGames; i++) {
 
                     Game game = new Game();
@@ -54,7 +255,7 @@ public class Simulation {
                     game.drawCard();
                     game.drawCard();
 
-                    if (doIWinTurnOneAncestrallLotusBolt(game)) {
+                    if (doIWinTurnOneBelcher(game)) {
                         win++;
                     } else {
                         lose++;
@@ -71,6 +272,7 @@ public class Simulation {
                                                                                 }
                                                                                 else
                                                                                 {
+                                                                                    ///System.out.println(Integer.toString(deck.size()));
                                                                                     //do not simulate
                                                                                 }
                                                                             }
@@ -91,31 +293,34 @@ public class Simulation {
                 }
             }
         }
+        
+         System.out.println("most games won:" + Integer.toString(highestWins));
+         System.out.println("winning deck:" + winningDeck.toString());
 
-        int win = 0;
-        int lose = 0;
-        int totalGames = 10000;
-        for (int i = 0; i < totalGames; i++) {
-
-            Game game = new Game();
-            game.setCardsInDeck(getBelcherDeck(4, 4, 4, 0, 4, 4, 4, 4, 4, 4, 4, 4, 1, 3, 4, 2, 4, 2));
-            game.drawCard();
-            game.drawCard();
-            game.drawCard();
-            game.drawCard();
-            game.drawCard();
-            game.drawCard();
-            game.drawCard();
-
-            if (doIWinTurnOneBelcher(game)) {
-                win++;
-            } else {
-                lose++;
-            }
-        }
-        System.out.println("Total games won:" + Integer.toString(win));
-        System.out.println("Total games lost:" + Integer.toString(lose));
-        System.out.println("Percentage Games Won:" + Double.toString((win * 100) / totalGames));
+//        int win = 0;
+//        int lose = 0;
+//        int totalGames = 10000;
+//        for (int i = 0; i < totalGames; i++) {
+//
+//            Game game = new Game();
+//            game.setCardsInDeck(getBelcherDeck(4, 4, 4, 0, 4, 4, 4, 4, 4, 4, 4, 4, 1, 3, 4, 2, 4, 2));
+//            game.drawCard();
+//            game.drawCard();
+//            game.drawCard();
+//            game.drawCard();
+//            game.drawCard();
+//            game.drawCard();
+//            game.drawCard();
+//
+//            if (doIWinTurnOneBelcher(game)) {
+//                win++;
+//            } else {
+//                lose++;
+//            }
+//        }
+//        System.out.println("Total games won:" + Integer.toString(win));
+//        System.out.println("Total games lost:" + Integer.toString(lose));
+//        System.out.println("Percentage Games Won:" + Double.toString((win * 100) / totalGames));
 
     }
     
