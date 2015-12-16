@@ -12,7 +12,7 @@ import java.util.ArrayList;
  *
  * @author Bash
  */
-public class Simulation {
+public class BelcherSimulation {
     
     public void simulateBelcher()
     {
@@ -35,59 +35,59 @@ public class Simulation {
 
                 for (double i = 0; i < totalGames; i++) {
 
-                    Game game = new Game();
-                    //game.setCardsInDeck(getBelcherDeck(ChromeMox,GoblinCharbelcher,BurningWish,GrimMonolith,LionsEyeDiamond,LotusPetal,ElvishSpiritGuide,SimianSpiritGuide,TinderWall,DesperateRitual,PyreticRitual,SeethingSong,Taiga,EmptyTheWarrens,LandGrant,GitaxianProbe,RiteOfFlame,Manamorphose));
-                    game.setCardsInDeck(getBelcherDeck(3,4,4,0  ,4,4,4,4,4,4,4,4,1,3,4,4,4,1)); //list from starcitygames
-                    /// no empty game.setCardsInDeck(getBelcherDeck(4,4,0,4  ,4,4,4,4,4,4,4,4,1,0,4,4,4,3));
-                    game.drawCard();
-                    game.drawCard();
-                    game.drawCard();
-                    game.drawCard();
-                    game.drawCard();
-                    game.drawCard();
-                    game.drawCard();
+                    BelcherGame belcherGame = new BelcherGame();
+                    //belcherGame.setCardsInDeck(getBelcherDeck(ChromeMox,GoblinCharbelcher,BurningWish,GrimMonolith,LionsEyeDiamond,LotusPetal,ElvishSpiritGuide,SimianSpiritGuide,TinderWall,DesperateRitual,PyreticRitual,SeethingSong,Taiga,EmptyTheWarrens,LandGrant,GitaxianProbe,RiteOfFlame,Manamorphose));
+                    belcherGame.setCardsInDeck(getBelcherDeck(3,4,4,0  ,4,4,4,4,4,4,4,4,1,3,4,4,4,1)); //list from starcitygames
+                    /// no empty belcherGame.setCardsInDeck(getBelcherDeck(4,4,0,4  ,4,4,4,4,4,4,4,4,1,0,4,4,4,3));
+                    belcherGame.drawCard();
+                    belcherGame.drawCard();
+                    belcherGame.drawCard();
+                    belcherGame.drawCard();
+                    belcherGame.drawCard();
+                    belcherGame.drawCard();
+                    belcherGame.drawCard();
 
-                    if (doIWinTurnOneBelcher(game)) {
+                    if (doIWinTurnOneBelcher(belcherGame)) {
                         win++;
                     } else {
                         lose++;
                     }
-                    if (game.getGoblinTokens() == 0)
+                    if (belcherGame.getGoblinTokens() == 0)
                     {
                         noGoblins++;
-                    } else if (game.getGoblinTokens() == 2)
+                    } else if (belcherGame.getGoblinTokens() == 2)
                     {
                         twoGoblins++;
-                    }else if (game.getGoblinTokens() == 4)
+                    }else if (belcherGame.getGoblinTokens() == 4)
                     {
                         fourGoblins++;
-                    }else if (game.getGoblinTokens() == 6)
+                    }else if (belcherGame.getGoblinTokens() == 6)
                     {
                         sixGoblins++;
-                    }else if (game.getGoblinTokens() == 8)
+                    }else if (belcherGame.getGoblinTokens() == 8)
                     {
                         eightGoblins++;
-                    }else if (game.getGoblinTokens() == 10)
+                    }else if (belcherGame.getGoblinTokens() == 10)
                     {
                         tenGoblins++;
-                    }else if (game.getGoblinTokens() == 12)
+                    }else if (belcherGame.getGoblinTokens() == 12)
                     {
                         twelveGoblins++;
-                    }else if (game.getGoblinTokens() == 14)
+                    }else if (belcherGame.getGoblinTokens() == 14)
                     {
                         fourteenGoblins++;
-                    }else if (game.getGoblinTokens() == 16)
+                    }else if (belcherGame.getGoblinTokens() == 16)
                     {
                         sixteenGoblins++;
-                    }else if (game.getGoblinTokens() == 18)
+                    }else if (belcherGame.getGoblinTokens() == 18)
                     {
                         eighteenGoblins++;
-                    }else if (game.getGoblinTokens() >= 20)
+                    }else if (belcherGame.getGoblinTokens() >= 20)
                     {
                         twentyormoreGoblins++;
                     }
                     
-                    if (game.isBelcherActivatedButFailed())
+                    if (belcherGame.isBelcherActivatedButFailed())
                     {
                         belcherFails++;
                     }
@@ -141,59 +141,59 @@ public class Simulation {
             
                 for (int g = 0; g < totalGames; g++) {
 
-                    Game game = new Game();
-                    //game.setCardsInDeck(getBelcherDeck(ChromeMox,GoblinCharbelcher,BurningWish,GrimMonolith,LionsEyeDiamond,LotusPetal,ElvishSpiritGuide,SimianSpiritGuide,TinderWall,DesperateRitual,PyreticRitual,SeethingSong,Taiga,EmptyTheWarrens,LandGrant,GitaxianProbe,RiteOfFlame,Manamorphose));
-                    game.setCardsInDeck(getBelcherDeck(3,4,4,0  ,4,4,4,4,4,4,4,4,1,3,4,4,4,1)); //list from starcitygames
-                    /// no empty game.setCardsInDeck(getBelcherDeck(4,4,0,4  ,4,4,4,4,4,4,4,4,1,0,4,4,4,3));
+                    BelcherGame belcherGame = new BelcherGame();
+                    //belcherGame.setCardsInDeck(getBelcherDeck(ChromeMox,GoblinCharbelcher,BurningWish,GrimMonolith,LionsEyeDiamond,LotusPetal,ElvishSpiritGuide,SimianSpiritGuide,TinderWall,DesperateRitual,PyreticRitual,SeethingSong,Taiga,EmptyTheWarrens,LandGrant,GitaxianProbe,RiteOfFlame,Manamorphose));
+                    belcherGame.setCardsInDeck(getBelcherDeck(3,4,4,0  ,4,4,4,4,4,4,4,4,1,3,4,4,4,1)); //list from starcitygames
+                    /// no empty belcherGame.setCardsInDeck(getBelcherDeck(4,4,0,4  ,4,4,4,4,4,4,4,4,1,0,4,4,4,3));
                     
                     for (int j = 0; j < i; j++) {
-                    game.drawCard();
+                    belcherGame.drawCard();
                     }
 
 
-                    if (doIWinTurnOneBelcher(game)) {
+                    if (doIWinTurnOneBelcher(belcherGame)) {
                         win++;
                     } else {
                         lose++;
                     }
-                    totalGoblins = totalGoblins + game.getGoblinTokens();
+                    totalGoblins = totalGoblins + belcherGame.getGoblinTokens();
                     
-                    if (game.getGoblinTokens() == 0)
+                    if (belcherGame.getGoblinTokens() == 0)
                     {
                         noGoblins++;
-                    } else if (game.getGoblinTokens() == 2)
+                    } else if (belcherGame.getGoblinTokens() == 2)
                     {
                         twoGoblins++;
-                    }else if (game.getGoblinTokens() == 4)
+                    }else if (belcherGame.getGoblinTokens() == 4)
                     {
                         fourGoblins++;
-                    }else if (game.getGoblinTokens() == 6)
+                    }else if (belcherGame.getGoblinTokens() == 6)
                     {
                         sixGoblins++;
-                    }else if (game.getGoblinTokens() == 8)
+                    }else if (belcherGame.getGoblinTokens() == 8)
                     {
                         eightGoblins++;
-                    }else if (game.getGoblinTokens() == 10)
+                    }else if (belcherGame.getGoblinTokens() == 10)
                     {
                         tenGoblins++;
-                    }else if (game.getGoblinTokens() == 12)
+                    }else if (belcherGame.getGoblinTokens() == 12)
                     {
                         twelveGoblins++;
-                    }else if (game.getGoblinTokens() == 14)
+                    }else if (belcherGame.getGoblinTokens() == 14)
                     {
                         fourteenGoblins++;
-                    }else if (game.getGoblinTokens() == 16)
+                    }else if (belcherGame.getGoblinTokens() == 16)
                     {
                         sixteenGoblins++;
-                    }else if (game.getGoblinTokens() == 18)
+                    }else if (belcherGame.getGoblinTokens() == 18)
                     {
                         eighteenGoblins++;
-                    }else if (game.getGoblinTokens() >= 20)
+                    }else if (belcherGame.getGoblinTokens() >= 20)
                     {
                         twentyormoreGoblins++;
                     }
                     
-                    if (game.isBelcherActivatedButFailed())
+                    if (belcherGame.isBelcherActivatedButFailed())
                     {
                         belcherFails++;
                     }
@@ -245,17 +245,17 @@ public class Simulation {
                 int totalGames = 1000;
                 for (int i = 0; i < totalGames; i++) {
 
-                    Game game = new Game();
-                    game.setCardsInDeck(getBelcherDeck(ChromeMox,GoblinCharbelcher,BurningWish,GrimMonolith,LionsEyeDiamond,LotusPetal,ElvishSpiritGuide,SimianSpiritGuide,TinderWall,DesperateRitual,PyreticRitual,SeethingSong,Taiga,EmptyTheWarrens,LandGrant,GitaxianProbe,RiteOfFlame,Manamorphose));
-                    game.drawCard();
-                    game.drawCard();
-                    game.drawCard();
-                    game.drawCard();
-                    game.drawCard();
-                    game.drawCard();
-                    game.drawCard();
+                    BelcherGame belcherGame = new BelcherGame();
+                    belcherGame.setCardsInDeck(getBelcherDeck(ChromeMox,GoblinCharbelcher,BurningWish,GrimMonolith,LionsEyeDiamond,LotusPetal,ElvishSpiritGuide,SimianSpiritGuide,TinderWall,DesperateRitual,PyreticRitual,SeethingSong,Taiga,EmptyTheWarrens,LandGrant,GitaxianProbe,RiteOfFlame,Manamorphose));
+                    belcherGame.drawCard();
+                    belcherGame.drawCard();
+                    belcherGame.drawCard();
+                    belcherGame.drawCard();
+                    belcherGame.drawCard();
+                    belcherGame.drawCard();
+                    belcherGame.drawCard();
 
-                    if (doIWinTurnOneBelcher(game)) {
+                    if (doIWinTurnOneBelcher(belcherGame)) {
                         win++;
                     } else {
                         lose++;
@@ -302,7 +302,7 @@ public class Simulation {
 //        int totalGames = 10000;
 //        for (int i = 0; i < totalGames; i++) {
 //
-//            Game game = new Game();
+//            BelcherGame game = new BelcherGame();
 //            game.setCardsInDeck(getBelcherDeck(4, 4, 4, 0, 4, 4, 4, 4, 4, 4, 4, 4, 1, 3, 4, 2, 4, 2));
 //            game.drawCard();
 //            game.drawCard();
@@ -340,192 +340,192 @@ public class Simulation {
         }
     }
 
-    public boolean doIWinTurnOneBelcher(Game game) {
-        return makeNextMoveBelcher(game);
+    public boolean doIWinTurnOneBelcher(BelcherGame belcherGame) {
+        return makeNextMoveBelcher(belcherGame);
     }
 
-    public boolean makeNextMoveBelcher(Game game) {
-        if (!game.isTriedToPlayLandGrant() && game.getCardFromHandWithName("LandGrant") != null) {
-            if (game.isLandDropMade() || game.getCardFromHandWithName("Taiga") != null) {
-                if (game.getCardFromHandWithName("ChromeMox") != null) {
-                    ChromeMox c = (ChromeMox) game.getCardFromHandWithName("ChromeMox");
-                    c.play(game, game.getCardFromHandWithName("LandGrant"), Mana.GREEN);
-                    c.activate(game);
+    public boolean makeNextMoveBelcher(BelcherGame belcherGame) {
+        if (!belcherGame.isTriedToPlayLandGrant() && belcherGame.getCardFromHandWithName("LandGrant") != null) {
+            if (belcherGame.isLandDropMade() || belcherGame.getCardFromHandWithName("Taiga") != null) {
+                if (belcherGame.getCardFromHandWithName("ChromeMox") != null) {
+                    ChromeMox c = (ChromeMox) belcherGame.getCardFromHandWithName("ChromeMox");
+                    c.play(belcherGame, belcherGame.getCardFromHandWithName("LandGrant"), Mana.GREEN);
+                    c.activate(belcherGame);
                     System.out.println("play:" + "ChromeMox");
-                    System.out.println("TotalMana: " + Integer.toString(game.getTotalMana()));
-                    return makeNextMoveBelcher(game);
+                    System.out.println("TotalMana: " + Integer.toString(belcherGame.getTotalMana()));
+                    return makeNextMoveBelcher(belcherGame);
                 } else {
-                    game.setTriedToPlayLandGrant(true);
-                    return makeNextMoveBelcher(game);
+                    belcherGame.setTriedToPlayLandGrant(true);
+                    return makeNextMoveBelcher(belcherGame);
                 }
             } else {
-                ((LandGrant) game.getCardFromHandWithName("LandGrant")).play(game);
+                ((LandGrant) belcherGame.getCardFromHandWithName("LandGrant")).play(belcherGame);
                 System.out.println("play:" + "LandGrant");
-                return makeNextMoveBelcher(game);
+                return makeNextMoveBelcher(belcherGame);
 
             }
 
-        } else if (game.getCardFromHandWithName("LionsEyeDiamond") != null) {
-            LionsEyeDiamond c = (LionsEyeDiamond) game.getCardFromHandWithName("LionsEyeDiamond");
-            c.play(game);
+        } else if (belcherGame.getCardFromHandWithName("LionsEyeDiamond") != null) {
+            LionsEyeDiamond c = (LionsEyeDiamond) belcherGame.getCardFromHandWithName("LionsEyeDiamond");
+            c.play(belcherGame);
             System.out.println("play:" + "LionsEyeDiamond");
-            System.out.println("TotalMana: " + Integer.toString(game.getTotalMana()));
-            return makeNextMoveBelcher(game);
-        } else if (game.getCardFromHandWithName("TinderWall") != null && game.getGreenMana() > 0) {
-            TinderWall c = (TinderWall) game.getCardFromHandWithName("TinderWall");
-            c.play(game);
-            c.activate(game);
+            System.out.println("TotalMana: " + Integer.toString(belcherGame.getTotalMana()));
+            return makeNextMoveBelcher(belcherGame);
+        } else if (belcherGame.getCardFromHandWithName("TinderWall") != null && belcherGame.getGreenMana() > 0) {
+            TinderWall c = (TinderWall) belcherGame.getCardFromHandWithName("TinderWall");
+            c.play(belcherGame);
+            c.activate(belcherGame);
             System.out.println("play:" + "TinderWall");
-            System.out.println("TotalMana: " + Integer.toString(game.getTotalMana()));
-            return makeNextMoveBelcher(game);
-        } else if (game.getCardFromHandWithName("SimianSpiritGuide") != null) {
-            ((SimianSpiritGuide) game.getCardFromHandWithName("SimianSpiritGuide")).play(game);
+            System.out.println("TotalMana: " + Integer.toString(belcherGame.getTotalMana()));
+            return makeNextMoveBelcher(belcherGame);
+        } else if (belcherGame.getCardFromHandWithName("SimianSpiritGuide") != null) {
+            ((SimianSpiritGuide) belcherGame.getCardFromHandWithName("SimianSpiritGuide")).play(belcherGame);
             System.out.println("play:" + "SimianSpiritGuide");
-            System.out.println("TotalMana: " + Integer.toString(game.getTotalMana()));
-            return makeNextMoveBelcher(game);
-        } else if (game.getCardFromHandWithName("ElvishSpiritGuide") != null) {
-            ((ElvishSpiritGuide) game.getCardFromHandWithName("ElvishSpiritGuide")).play(game);
+            System.out.println("TotalMana: " + Integer.toString(belcherGame.getTotalMana()));
+            return makeNextMoveBelcher(belcherGame);
+        } else if (belcherGame.getCardFromHandWithName("ElvishSpiritGuide") != null) {
+            ((ElvishSpiritGuide) belcherGame.getCardFromHandWithName("ElvishSpiritGuide")).play(belcherGame);
             System.out.println("play:" + "ElvishSpiritGuide");
-            System.out.println("TotalMana: " + Integer.toString(game.getTotalMana()));
-            return makeNextMoveBelcher(game);
-        } else if (game.getCardFromHandWithName("GitaxianProbe") != null && game.getLifeTotal() > 2) {
-            GitaxianProbe c = (GitaxianProbe) game.getCardFromHandWithName("GitaxianProbe");
-            c.playForLife(game);
+            System.out.println("TotalMana: " + Integer.toString(belcherGame.getTotalMana()));
+            return makeNextMoveBelcher(belcherGame);
+        } else if (belcherGame.getCardFromHandWithName("GitaxianProbe") != null && belcherGame.getLifeTotal() > 2) {
+            GitaxianProbe c = (GitaxianProbe) belcherGame.getCardFromHandWithName("GitaxianProbe");
+            c.playForLife(belcherGame);
             System.out.println("play:" + "GitaxianProbe");
-            System.out.println("TotalMana: " + Integer.toString(game.getTotalMana()));
-            return makeNextMoveBelcher(game);
-        } else if (game.getCardFromHandWithName("Manamorphose") != null && game.getTotalMana() > 1 && (game.getGreenMana() > 0 || game.getRedMana() > 0)) {
-            Manamorphose c = (Manamorphose) game.getCardFromHandWithName("Manamorphose");
+            System.out.println("TotalMana: " + Integer.toString(belcherGame.getTotalMana()));
+            return makeNextMoveBelcher(belcherGame);
+        } else if (belcherGame.getCardFromHandWithName("Manamorphose") != null && belcherGame.getTotalMana() > 1 && (belcherGame.getGreenMana() > 0 || belcherGame.getRedMana() > 0)) {
+            Manamorphose c = (Manamorphose) belcherGame.getCardFromHandWithName("Manamorphose");
 
-            if (game.getColorlessMana() > 0) {
-                game.setColorlessMana(game.getColorlessMana() - 1);
-                if (game.getRedMana() > 1 && game.getGreenMana() > 0) {
-                    game.setRedMana(game.getRedMana() - 1);
+            if (belcherGame.getColorlessMana() > 0) {
+                belcherGame.setColorlessMana(belcherGame.getColorlessMana() - 1);
+                if (belcherGame.getRedMana() > 1 && belcherGame.getGreenMana() > 0) {
+                    belcherGame.setRedMana(belcherGame.getRedMana() - 1);
                 } else {
-                    game.setGreenMana(game.getGreenMana() - 1);
+                    belcherGame.setGreenMana(belcherGame.getGreenMana() - 1);
                 }
             } else {
-                if (game.getRedMana() > 1 && game.getGreenMana() > 0) {
-                    game.setRedMana(game.getRedMana() - 1);
+                if (belcherGame.getRedMana() > 1 && belcherGame.getGreenMana() > 0) {
+                    belcherGame.setRedMana(belcherGame.getRedMana() - 1);
                 } else {
-                    game.setGreenMana(game.getGreenMana() - 1);
+                    belcherGame.setGreenMana(belcherGame.getGreenMana() - 1);
                 }
-                if (game.getRedMana() > 1 && game.getGreenMana() > 0) {
-                    game.setRedMana(game.getRedMana() - 1);
+                if (belcherGame.getRedMana() > 1 && belcherGame.getGreenMana() > 0) {
+                    belcherGame.setRedMana(belcherGame.getRedMana() - 1);
                 } else {
-                    game.setGreenMana(game.getGreenMana() - 1);
+                    belcherGame.setGreenMana(belcherGame.getGreenMana() - 1);
                 }
             }
             Mana mana1 = null;
-            if (game.getRedMana() > 0) {
+            if (belcherGame.getRedMana() > 0) {
                 mana1 = Mana.GREEN;
             } else {
                 mana1 = Mana.RED;
             }
-            c.play(game, mana1, Mana.RED);
-            System.out.println("TotalMana: " + Integer.toString(game.getTotalMana()));
+            c.play(belcherGame, mana1, Mana.RED);
+            System.out.println("TotalMana: " + Integer.toString(belcherGame.getTotalMana()));
             System.out.println("play:" + "Manamorphose");
-            return makeNextMoveBelcher(game);
-        } else if (game.getCardFromHandWithName("Taiga") != null) {
-            Taiga c = (Taiga) game.getCardFromHandWithName("Taiga");
-            c.play(game);
-            game.setLandDropMade(true);
-            if (game.getRedMana() > 0) {
-                c.activate(game, Mana.GREEN);
+            return makeNextMoveBelcher(belcherGame);
+        } else if (belcherGame.getCardFromHandWithName("Taiga") != null) {
+            Taiga c = (Taiga) belcherGame.getCardFromHandWithName("Taiga");
+            c.play(belcherGame);
+            belcherGame.setLandDropMade(true);
+            if (belcherGame.getRedMana() > 0) {
+                c.activate(belcherGame, Mana.GREEN);
             } else {
-                c.activate(game, Mana.RED);
+                c.activate(belcherGame, Mana.RED);
             }
 
             System.out.println("play:" + "Taiga");
-            System.out.println("TotalMana: " + Integer.toString(game.getTotalMana()));
-            return makeNextMoveBelcher(game);
-        } else if (game.getCardFromHandWithName("LotusPetal") != null) {
-            LotusPetal c = (LotusPetal) game.getCardFromHandWithName("LotusPetal");
-            c.play(game);
-            if (game.getRedMana() > 0) {
-                c.activate(game, Mana.GREEN);
+            System.out.println("TotalMana: " + Integer.toString(belcherGame.getTotalMana()));
+            return makeNextMoveBelcher(belcherGame);
+        } else if (belcherGame.getCardFromHandWithName("LotusPetal") != null) {
+            LotusPetal c = (LotusPetal) belcherGame.getCardFromHandWithName("LotusPetal");
+            c.play(belcherGame);
+            if (belcherGame.getRedMana() > 0) {
+                c.activate(belcherGame, Mana.GREEN);
             } else {
-                c.activate(game, Mana.RED);
+                c.activate(belcherGame, Mana.RED);
             }
 
             System.out.println("play:" + "LotusPetal");
-            System.out.println("TotalMana: " + Integer.toString(game.getTotalMana()));
-            return makeNextMoveBelcher(game);
-        } else if (game.getCardFromHandWithName("PyreticRitual") != null && game.getRedMana() > 0 && game.getTotalMana() > 1) {
-            PyreticRitual c = (PyreticRitual) game.getCardFromHandWithName("PyreticRitual");
-            c.play(game);
+            System.out.println("TotalMana: " + Integer.toString(belcherGame.getTotalMana()));
+            return makeNextMoveBelcher(belcherGame);
+        } else if (belcherGame.getCardFromHandWithName("PyreticRitual") != null && belcherGame.getRedMana() > 0 && belcherGame.getTotalMana() > 1) {
+            PyreticRitual c = (PyreticRitual) belcherGame.getCardFromHandWithName("PyreticRitual");
+            c.play(belcherGame);
             System.out.println("play:" + "PyreticRitual");
-            System.out.println("TotalMana: " + Integer.toString(game.getTotalMana()));
-            return makeNextMoveBelcher(game);
-        } else if (game.getCardFromHandWithName("DesperateRitual") != null && game.getRedMana() > 0 && game.getTotalMana() > 1) {
-            DesperateRitual c = (DesperateRitual) game.getCardFromHandWithName("DesperateRitual");
-            c.play(game);
+            System.out.println("TotalMana: " + Integer.toString(belcherGame.getTotalMana()));
+            return makeNextMoveBelcher(belcherGame);
+        } else if (belcherGame.getCardFromHandWithName("DesperateRitual") != null && belcherGame.getRedMana() > 0 && belcherGame.getTotalMana() > 1) {
+            DesperateRitual c = (DesperateRitual) belcherGame.getCardFromHandWithName("DesperateRitual");
+            c.play(belcherGame);
             System.out.println("play:" + "DesperateRitual");
-            System.out.println("TotalMana: " + Integer.toString(game.getTotalMana()));
+            System.out.println("TotalMana: " + Integer.toString(belcherGame.getTotalMana()));
 
-            return makeNextMoveBelcher(game);
-        } else if (game.getCardFromHandWithName("SeethingSong") != null && game.getRedMana() > 0 && game.getTotalMana() > 2) {
-            SeethingSong c = (SeethingSong) game.getCardFromHandWithName("SeethingSong");
-            c.play(game);
+            return makeNextMoveBelcher(belcherGame);
+        } else if (belcherGame.getCardFromHandWithName("SeethingSong") != null && belcherGame.getRedMana() > 0 && belcherGame.getTotalMana() > 2) {
+            SeethingSong c = (SeethingSong) belcherGame.getCardFromHandWithName("SeethingSong");
+            c.play(belcherGame);
             System.out.println("play:" + "SeethingSong");
-            System.out.println("TotalMana: " + Integer.toString(game.getTotalMana()));
+            System.out.println("TotalMana: " + Integer.toString(belcherGame.getTotalMana()));
 
-            return makeNextMoveBelcher(game);
-        } else if (game.getCardFromHandWithName("RiteOfFlame") != null && game.getRedMana() > 0) {
-            RiteOfFlame c = (RiteOfFlame) game.getCardFromHandWithName("RiteOfFlame");
+            return makeNextMoveBelcher(belcherGame);
+        } else if (belcherGame.getCardFromHandWithName("RiteOfFlame") != null && belcherGame.getRedMana() > 0) {
+            RiteOfFlame c = (RiteOfFlame) belcherGame.getCardFromHandWithName("RiteOfFlame");
 
-            c.play(game);
+            c.play(belcherGame);
             System.out.println("play:" + "RiteOfFlame");
-            System.out.println("TotalMana: " + Integer.toString(game.getTotalMana()));
-            return makeNextMoveBelcher(game);
-        } else if (game.getCardFromHandWithName("GrimMonolith") != null && game.getTotalMana() > 1) {
-            GrimMonolith c = (GrimMonolith) game.getCardFromHandWithName("GrimMonolith");
+            System.out.println("TotalMana: " + Integer.toString(belcherGame.getTotalMana()));
+            return makeNextMoveBelcher(belcherGame);
+        } else if (belcherGame.getCardFromHandWithName("GrimMonolith") != null && belcherGame.getTotalMana() > 1) {
+            GrimMonolith c = (GrimMonolith) belcherGame.getCardFromHandWithName("GrimMonolith");
 
-            if (game.getColorlessMana() > 1) {
-                game.setColorlessMana(game.getColorlessMana() - 2);
-            } else if (game.getColorlessMana() == 1) {
-                game.setColorlessMana(game.getColorlessMana() - 1);
-                if (game.getRedMana() > 1 && game.getGreenMana() > 0) {
-                    game.setRedMana(game.getRedMana() - 1);
+            if (belcherGame.getColorlessMana() > 1) {
+                belcherGame.setColorlessMana(belcherGame.getColorlessMana() - 2);
+            } else if (belcherGame.getColorlessMana() == 1) {
+                belcherGame.setColorlessMana(belcherGame.getColorlessMana() - 1);
+                if (belcherGame.getRedMana() > 1 && belcherGame.getGreenMana() > 0) {
+                    belcherGame.setRedMana(belcherGame.getRedMana() - 1);
                 } else {
-                    game.setGreenMana(game.getGreenMana() - 1);
+                    belcherGame.setGreenMana(belcherGame.getGreenMana() - 1);
                 }
             } else {
-                if (game.getRedMana() > 1 && game.getGreenMana() > 0) {
-                    game.setRedMana(game.getRedMana() - 1);
+                if (belcherGame.getRedMana() > 1 && belcherGame.getGreenMana() > 0) {
+                    belcherGame.setRedMana(belcherGame.getRedMana() - 1);
                 } else {
-                    game.setGreenMana(game.getGreenMana() - 1);
+                    belcherGame.setGreenMana(belcherGame.getGreenMana() - 1);
                 }
-                if (game.getRedMana() > 1 && game.getGreenMana() > 0) {
-                    game.setRedMana(game.getRedMana() - 1);
+                if (belcherGame.getRedMana() > 1 && belcherGame.getGreenMana() > 0) {
+                    belcherGame.setRedMana(belcherGame.getRedMana() - 1);
                 } else {
-                    game.setGreenMana(game.getGreenMana() - 1);
+                    belcherGame.setGreenMana(belcherGame.getGreenMana() - 1);
                 }
             }
 
-            c.play(game);
-            c.activate(game);
+            c.play(belcherGame);
+            c.activate(belcherGame);
             System.out.println("play:" + "GrimMonolith");
-            System.out.println("TotalMana: " + Integer.toString(game.getTotalMana()));
-            return makeNextMoveBelcher(game);
-        } else if (game.getCardFromHandWithName("GoblinCharbelcher") != null && game.getTotalMana() > 6) {
-            GoblinCharbelcher c = (GoblinCharbelcher) game.getCardFromHandWithName("GoblinCharbelcher");
-            c.play(game);
+            System.out.println("TotalMana: " + Integer.toString(belcherGame.getTotalMana()));
+            return makeNextMoveBelcher(belcherGame);
+        } else if (belcherGame.getCardFromHandWithName("GoblinCharbelcher") != null && belcherGame.getTotalMana() > 6) {
+            GoblinCharbelcher c = (GoblinCharbelcher) belcherGame.getCardFromHandWithName("GoblinCharbelcher");
+            c.play(belcherGame);
             System.out.println("play:" + "GoblinCharbelcher");
-            return c.activate(game);
-        } else if (game.getCardFromHandWithName("GoblinCharbelcher") != null && game.getTotalMana() > 3 && game.getCardFromPlayWithName("LionsEyeDiamond") != null) {
-            GoblinCharbelcher c = (GoblinCharbelcher) game.getCardFromHandWithName("GoblinCharbelcher");
-            c.play(game);
+            return c.activate(belcherGame);
+        } else if (belcherGame.getCardFromHandWithName("GoblinCharbelcher") != null && belcherGame.getTotalMana() > 3 && belcherGame.getCardFromPlayWithName("LionsEyeDiamond") != null) {
+            GoblinCharbelcher c = (GoblinCharbelcher) belcherGame.getCardFromHandWithName("GoblinCharbelcher");
+            c.play(belcherGame);
             System.out.println("play:" + "GoblinCharbelcher");
-            return c.activate(game);
-        } else if (!game.isTriedToPlayChromeMox() && game.getCardFromHandWithName("ChromeMox") != null) {
+            return c.activate(belcherGame);
+        } else if (!belcherGame.isTriedToPlayChromeMox() && belcherGame.getCardFromHandWithName("ChromeMox") != null) {
             System.out.println("play:" + "ChromeMox");
-            ChromeMox c = (ChromeMox) game.getCardFromHandWithName("ChromeMox");
+            ChromeMox c = (ChromeMox) belcherGame.getCardFromHandWithName("ChromeMox");
             boolean win = false;
             int mostGoblinTokens = 0;
-            for (Card card : game.getCardsInHand()) {
+            for (Card card : belcherGame.getCardsInHand()) {
                 if (card.getColor() != Mana.COLORLESS) {
-                    Game subgame = new Game(game);
+                    BelcherGame subgame = new BelcherGame(belcherGame);
                     System.out.println("exile to chrome mox:" + card.getCardName());
 
                     c.play(subgame, card, card.getColor());
@@ -541,52 +541,52 @@ public class Simulation {
             if (win) {
                 return true;
             } else {
-                game.setGoblinTokens(mostGoblinTokens);
-                game.setTriedToPlayChromeMox(true);
-                return makeNextMoveBelcher(game);
+                belcherGame.setGoblinTokens(mostGoblinTokens);
+                belcherGame.setTriedToPlayChromeMox(true);
+                return makeNextMoveBelcher(belcherGame);
             }
 
-        } else if (game.getCardFromHandWithName("BurningWish") != null && game.getRedMana() > 1 && game.getTotalMana() > 5 && game.getCardFromPlayWithName("LionsEyeDiamond") != null) {
+        } else if (belcherGame.getCardFromHandWithName("BurningWish") != null && belcherGame.getRedMana() > 1 && belcherGame.getTotalMana() > 5 && belcherGame.getCardFromPlayWithName("LionsEyeDiamond") != null) {
 
-            if (game.getColorlessMana() > 0) {
-                game.setColorlessMana(game.getColorlessMana() - 1);
-                game.setRedMana(game.getRedMana() - 1);
+            if (belcherGame.getColorlessMana() > 0) {
+                belcherGame.setColorlessMana(belcherGame.getColorlessMana() - 1);
+                belcherGame.setRedMana(belcherGame.getRedMana() - 1);
             } else {
-                game.setRedMana(game.getRedMana() - 2);
+                belcherGame.setRedMana(belcherGame.getRedMana() - 2);
             }
 
-            game.setRedMana(game.getRedMana() + 3);
+            belcherGame.setRedMana(belcherGame.getRedMana() + 3);
 
-            BurningWish c = (BurningWish) game.getCardFromHandWithName("BurningWish");
-            c.play(game);
+            BurningWish c = (BurningWish) belcherGame.getCardFromHandWithName("BurningWish");
+            c.play(belcherGame);
             System.out.println("play:" + "BurningWish");
-            return makeNextMoveBelcher(game);
-        } else if (game.getCardFromHandWithName("BurningWish") != null && game.getRedMana() > 1 && game.getTotalMana() > 2) {
+            return makeNextMoveBelcher(belcherGame);
+        } else if (belcherGame.getCardFromHandWithName("BurningWish") != null && belcherGame.getRedMana() > 1 && belcherGame.getTotalMana() > 2) {
 
-            if (game.getColorlessMana() > 0) {
-                game.setColorlessMana(game.getColorlessMana() - 1);
-                game.setRedMana(game.getRedMana() - 1);
+            if (belcherGame.getColorlessMana() > 0) {
+                belcherGame.setColorlessMana(belcherGame.getColorlessMana() - 1);
+                belcherGame.setRedMana(belcherGame.getRedMana() - 1);
             } else {
-                game.setRedMana(game.getRedMana() - 2);
+                belcherGame.setRedMana(belcherGame.getRedMana() - 2);
             }
 
-            BurningWish c = (BurningWish) game.getCardFromHandWithName("BurningWish");
-            c.play(game);
+            BurningWish c = (BurningWish) belcherGame.getCardFromHandWithName("BurningWish");
+            c.play(belcherGame);
             System.out.println("play:" + "BurningWish");
-            return makeNextMoveBelcher(game);
-        } else if (game.getCardFromHandWithName("EmptyTheWarrens") != null && game.getRedMana() > 0 && game.getTotalMana() > 3) {
+            return makeNextMoveBelcher(belcherGame);
+        } else if (belcherGame.getCardFromHandWithName("EmptyTheWarrens") != null && belcherGame.getRedMana() > 0 && belcherGame.getTotalMana() > 3) {
 
-            while (game.getCardFromHandWithName("ChromeMox") != null) {
-                ChromeMox c = (ChromeMox) game.getCardFromHandWithName("ChromeMox");
-                c.playWithoutImprint(game);
+            while (belcherGame.getCardFromHandWithName("ChromeMox") != null) {
+                ChromeMox c = (ChromeMox) belcherGame.getCardFromHandWithName("ChromeMox");
+                c.playWithoutImprint(belcherGame);
             }
-            while (game.getCardFromHandWithName("LandGrant") != null) {
-                LandGrant c = (LandGrant) game.getCardFromHandWithName("LandGrant");
-                c.playWithoutFindingAnything(game);
+            while (belcherGame.getCardFromHandWithName("LandGrant") != null) {
+                LandGrant c = (LandGrant) belcherGame.getCardFromHandWithName("LandGrant");
+                c.playWithoutFindingAnything(belcherGame);
             }
 
-            EmptyTheWarrens c = (EmptyTheWarrens) game.getCardFromHandWithName("EmptyTheWarrens");
-            game.setGoblinTokens(c.play(game));
+            EmptyTheWarrens c = (EmptyTheWarrens) belcherGame.getCardFromHandWithName("EmptyTheWarrens");
+            belcherGame.setGoblinTokens(c.play(belcherGame));
             System.out.println("play:" + "Empty the Warrens");
             return false;
         } else {
@@ -739,17 +739,17 @@ public class Simulation {
                 int totalGames = 10000;
                 for (int i = 0; i < totalGames; i++) {
 
-                    Game game = new Game();
-                    game.setCardsInDeck(getDeck(lotus, bolt, ancestrall));
-                    game.drawCard();
-                    game.drawCard();
-                    game.drawCard();
-                    game.drawCard();
-                    game.drawCard();
-                    game.drawCard();
-                    game.drawCard();
+                    BelcherGame belcherGame = new BelcherGame();
+                    belcherGame.setCardsInDeck(getDeck(lotus, bolt, ancestrall));
+                    belcherGame.drawCard();
+                    belcherGame.drawCard();
+                    belcherGame.drawCard();
+                    belcherGame.drawCard();
+                    belcherGame.drawCard();
+                    belcherGame.drawCard();
+                    belcherGame.drawCard();
 
-                    if (doIWinTurnOneAncestrallLotusBolt(game)) {
+                    if (doIWinTurnOneAncestrallLotusBolt(belcherGame)) {
                         win++;
                     } else {
                         lose++;
@@ -776,26 +776,26 @@ public class Simulation {
 
     }
 
-    public boolean doIWinTurnOneAncestrallLotusBolt(Game game) {
-        return makeNextMoveAncestrallLotusBolt(game);
+    public boolean doIWinTurnOneAncestrallLotusBolt(BelcherGame belcherGame) {
+        return makeNextMoveAncestrallLotusBolt(belcherGame);
     }
 
-    public boolean makeNextMoveAncestrallLotusBolt(Game game) {
-        if (game.howManyCardsWithNameDoIHaveInHand("LightningBolt") > 6 && game.howManyCardsWithNameDoIHaveInHand("BlackLotus") > 2) {
+    public boolean makeNextMoveAncestrallLotusBolt(BelcherGame belcherGame) {
+        if (belcherGame.howManyCardsWithNameDoIHaveInHand("LightningBolt") > 6 && belcherGame.howManyCardsWithNameDoIHaveInHand("BlackLotus") > 2) {
             return true;
-        } else if (game.getCardFromHandWithName("AncestrallRecall") != null && game.getBlueMana() > 0 && game.getCardsInDeck().size() > 2) {
-            AncestrallRecall a = (AncestrallRecall) game.getCardFromHandWithName("AncestrallRecall");
-            a.play(game);
+        } else if (belcherGame.getCardFromHandWithName("AncestrallRecall") != null && belcherGame.getBlueMana() > 0 && belcherGame.getCardsInDeck().size() > 2) {
+            AncestrallRecall a = (AncestrallRecall) belcherGame.getCardFromHandWithName("AncestrallRecall");
+            a.play(belcherGame);
             //System.out.println("play Ancestrall Recall");
 
-            return makeNextMoveAncestrallLotusBolt(game);
-        } else if (game.getCardFromHandWithName("BlackLotus") != null) {
-            BlackLotus a = (BlackLotus) game.getCardFromHandWithName("BlackLotus");
-            a.play(game);
-            a.activate(game, Mana.BLUE);
+            return makeNextMoveAncestrallLotusBolt(belcherGame);
+        } else if (belcherGame.getCardFromHandWithName("BlackLotus") != null) {
+            BlackLotus a = (BlackLotus) belcherGame.getCardFromHandWithName("BlackLotus");
+            a.play(belcherGame);
+            a.activate(belcherGame, Mana.BLUE);
             //System.out.println("play Black Lotus");
 
-            return makeNextMoveAncestrallLotusBolt(game);
+            return makeNextMoveAncestrallLotusBolt(belcherGame);
         } else {
             return false;
         }

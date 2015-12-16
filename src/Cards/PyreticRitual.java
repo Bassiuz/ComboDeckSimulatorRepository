@@ -5,7 +5,7 @@
  */
 package Cards;
 
-import Simulation.Game;
+import Simulation.BelcherGame;
 import Simulation.Mana;
 
 /**
@@ -19,12 +19,12 @@ public class PyreticRitual extends Card {
         this.setCardName("PyreticRitual");
     }
     
-        public void play(Game game)
-    {        game.uppStormCount();
+        public void play(BelcherGame belcherGame)
+    {        belcherGame.uppStormCount();
 
-        game.getCardsInHand().remove(this);
-        game.getCardsInGraveyard().add(this);
-        game.setRedMana(game.getRedMana() + 1);
+        belcherGame.getCardsInHand().remove(this);
+        belcherGame.getCardsInGraveyard().add(this);
+        belcherGame.setRedMana(belcherGame.getRedMana() + 1);
     }
         
                   @Override      public Mana getColor()

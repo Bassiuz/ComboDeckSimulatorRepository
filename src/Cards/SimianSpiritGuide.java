@@ -5,7 +5,7 @@
  */
 package Cards;
 
-import Simulation.Game;
+import Simulation.BelcherGame;
 import Simulation.Mana;
 
 /**
@@ -19,11 +19,11 @@ public class SimianSpiritGuide extends Card {
         this.setCardName("SimianSpiritGuide");
     }
     
-    public void play(Game game)
+    public void play(BelcherGame belcherGame)
     {
-        game.getCardsInHand().remove(this);
-        game.getCardsInExile().add(this);
-        game.setRedMana(game.getRedMana() + 1);
+        belcherGame.getCardsInHand().remove(this);
+        belcherGame.getCardsInExile().add(this);
+        belcherGame.setRedMana(belcherGame.getRedMana() + 1);
     }
     
               @Override      public Mana getColor()

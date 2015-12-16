@@ -5,7 +5,7 @@
  */
 package Cards;
 
-import Simulation.Game;
+import Simulation.BelcherGame;
 import Simulation.Mana;
 
 /**
@@ -19,22 +19,22 @@ public class GitaxianProbe extends Card {
         this.setCardName("GitaxianProbe");
     }
     
-        public void playForMana(Game game)
-    {        game.uppStormCount();
+        public void playForMana(BelcherGame belcherGame)
+    {        belcherGame.uppStormCount();
 
-        game.getCardsInHand().remove(this);
-        game.getCardsInGraveyard().add(this);
-        game.setBlueMana(game.getBlueMana() -1);
-        game.drawCard();
+        belcherGame.getCardsInHand().remove(this);
+        belcherGame.getCardsInGraveyard().add(this);
+        belcherGame.setBlueMana(belcherGame.getBlueMana() -1);
+        belcherGame.drawCard();
     }
         
-    public void playForLife(Game game)
-    {        game.uppStormCount();
+    public void playForLife(BelcherGame belcherGame)
+    {        belcherGame.uppStormCount();
 
-        game.getCardsInHand().remove(this);
-        game.getCardsInGraveyard().add(this);
-        game.setLifeTotal(game.getLifeTotal() - 2);
-        game.drawCard();
+        belcherGame.getCardsInHand().remove(this);
+        belcherGame.getCardsInGraveyard().add(this);
+        belcherGame.setLifeTotal(belcherGame.getLifeTotal() - 2);
+        belcherGame.drawCard();
     }
     
           @Override      public Mana getColor()

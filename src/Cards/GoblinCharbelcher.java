@@ -5,7 +5,7 @@
  */
 package Cards;
 
-import Simulation.Game;
+import Simulation.BelcherGame;
 import Simulation.Mana;
 import java.util.ArrayList;
 
@@ -20,15 +20,15 @@ public class GoblinCharbelcher extends Card {
         this.setCardName("GoblinCharbelcher");
     }
     
-    public void play(Game game)
-    {        game.uppStormCount();
+    public void play(BelcherGame belcherGame)
+    {        belcherGame.uppStormCount();
 
         //PAY MANA IN ALGORITHM
-        game.getCardsInHand().remove(this);
-        game.getCardsInPlay().add(this);
+        belcherGame.getCardsInHand().remove(this);
+        belcherGame.getCardsInPlay().add(this);
     }
     
-    public boolean activate(Game game)
+    public boolean activate(BelcherGame belcherGame)
     {
         //ADD BELCHER LOGIC
         boolean stop = false;
@@ -36,9 +36,9 @@ public class GoblinCharbelcher extends Card {
         ArrayList<Card> revealedCards = new ArrayList<Card>();
         while (!stop)
         {
-            if (game.getCardsInDeck().size() > 0)
+            if (belcherGame.getCardsInDeck().size() > 0)
             {
-                Card c = game.revealCardFromDeck();
+                Card c = belcherGame.revealCardFromDeck();
                 revealedCards.add(c);
                 
                 if (c.getCardName().equals("Taiga"))
@@ -61,7 +61,7 @@ public class GoblinCharbelcher extends Card {
             }
             else
             {
-                game.setBelcherActivatedButFailed(true);
+                belcherGame.setBelcherActivatedButFailed(true);
                 return false;
               
             }
@@ -74,7 +74,7 @@ public class GoblinCharbelcher extends Card {
             }
             else
             {
-                game.setBelcherActivatedButFailed(true);
+                belcherGame.setBelcherActivatedButFailed(true);
                 return false;
             }
         }

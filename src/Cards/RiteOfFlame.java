@@ -5,7 +5,7 @@
  */
 package Cards;
 
-import Simulation.Game;
+import Simulation.BelcherGame;
 import Simulation.Mana;
 
 /**
@@ -19,12 +19,12 @@ public class RiteOfFlame extends Card {
         this.setCardName("RiteOfFlame");
     }
     
-            public void play(Game game)
+            public void play(BelcherGame belcherGame)
     {        
         
-        game.uppStormCount();
+        belcherGame.uppStormCount();
         int riteOfFlameInBin = 1;
-        for(Card card :game.getCardsInGraveyard())
+        for(Card card : belcherGame.getCardsInGraveyard())
         {
             if (card.getCardName().equals("RiteOfFlame"))
             {
@@ -32,9 +32,9 @@ public class RiteOfFlame extends Card {
             }
         }
         
-        game.getCardsInHand().remove(this);
-        game.getCardsInGraveyard().add(this);
-        game.setRedMana(game.getRedMana() + riteOfFlameInBin);
+        belcherGame.getCardsInHand().remove(this);
+        belcherGame.getCardsInGraveyard().add(this);
+        belcherGame.setRedMana(belcherGame.getRedMana() + riteOfFlameInBin);
     }
             
                    @Override      public Mana getColor()

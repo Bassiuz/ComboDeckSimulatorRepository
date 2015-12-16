@@ -5,7 +5,7 @@
  */
 package Cards;
 
-import Simulation.Game;
+import Simulation.BelcherGame;
 import Simulation.Mana;
 
 /**
@@ -20,39 +20,39 @@ public class Manamorphose extends Card {
     }
     
     
-    public void play(Game game, Mana manaColorOfChoice1, Mana manaColorOfChoice2)
-    {        game.uppStormCount();
+    public void play(BelcherGame belcherGame, Mana manaColorOfChoice1, Mana manaColorOfChoice2)
+    {        belcherGame.uppStormCount();
 
-        game.getCardsInHand().remove(this);
-        game.getCardsInGraveyard().add(this);
+        belcherGame.getCardsInHand().remove(this);
+        belcherGame.getCardsInGraveyard().add(this);
         
          switch (manaColorOfChoice1) {
             case BLACK:
-                game.setBlackMana(game.getBlackMana() + 1);
+                belcherGame.setBlackMana(belcherGame.getBlackMana() + 1);
                 break;
                 
             case BLUE:
-                game.setBlueMana(game.getBlueMana() + 1);
+                belcherGame.setBlueMana(belcherGame.getBlueMana() + 1);
 
                 break;
                 
             case GREEN:
-                game.setGreenMana(game.getGreenMana() + 1);
+                belcherGame.setGreenMana(belcherGame.getGreenMana() + 1);
 
                 break;
                                 
             case RED:
-                game.setRedMana(game.getRedMana() + 1);
+                belcherGame.setRedMana(belcherGame.getRedMana() + 1);
 
                 break;
           
             case WHITE:
-                game.setWhiteMana(game.getWhiteMana() + 1);
+                belcherGame.setWhiteMana(belcherGame.getWhiteMana() + 1);
 
                 break;
                                 
             case COLORLESS:
-                game.setColorlessMana(game.getColorlessMana() + 1);
+                belcherGame.setColorlessMana(belcherGame.getColorlessMana() + 1);
 
                 break;
                            
@@ -62,31 +62,31 @@ public class Manamorphose extends Card {
          
          switch (manaColorOfChoice2) {
             case BLACK:
-                game.setBlackMana(game.getBlackMana() + 1);
+                belcherGame.setBlackMana(belcherGame.getBlackMana() + 1);
                 break;
                 
             case BLUE:
-                game.setBlueMana(game.getBlueMana() + 1);
+                belcherGame.setBlueMana(belcherGame.getBlueMana() + 1);
 
                 break;
                 
             case GREEN:
-                game.setGreenMana(game.getGreenMana() + 1);
+                belcherGame.setGreenMana(belcherGame.getGreenMana() + 1);
 
                 break;
                                 
             case RED:
-                game.setRedMana(game.getRedMana() + 1);
+                belcherGame.setRedMana(belcherGame.getRedMana() + 1);
 
                 break;
           
             case WHITE:
-                game.setWhiteMana(game.getWhiteMana() + 1);
+                belcherGame.setWhiteMana(belcherGame.getWhiteMana() + 1);
 
                 break;
                                 
             case COLORLESS:
-                game.setColorlessMana(game.getColorlessMana() + 1);
+                belcherGame.setColorlessMana(belcherGame.getColorlessMana() + 1);
 
                 break;
                            

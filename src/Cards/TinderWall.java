@@ -5,7 +5,7 @@
  */
 package Cards;
 
-import Simulation.Game;
+import Simulation.BelcherGame;
 import Simulation.Mana;
 
 /**
@@ -19,19 +19,19 @@ public class TinderWall extends Card {
         this.setCardName("TinderWall");
     }
     
-    public void play(Game game)
-    {        game.uppStormCount();
+    public void play(BelcherGame belcherGame)
+    {        belcherGame.uppStormCount();
 
-        game.getCardsInHand().remove(this);
-        game.getCardsInPlay().add(this);
-        game.setGreenMana(game.getGreenMana() -1);
+        belcherGame.getCardsInHand().remove(this);
+        belcherGame.getCardsInPlay().add(this);
+        belcherGame.setGreenMana(belcherGame.getGreenMana() -1);
     }
     
-    public void activate(Game game)
+    public void activate(BelcherGame belcherGame)
     {
-        game.getCardsInPlay().remove(this);
-        game.getCardsInGraveyard().add(this);
-        game.setRedMana(game.getRedMana() +2);
+        belcherGame.getCardsInPlay().remove(this);
+        belcherGame.getCardsInGraveyard().add(this);
+        belcherGame.setRedMana(belcherGame.getRedMana() +2);
         
     }
     

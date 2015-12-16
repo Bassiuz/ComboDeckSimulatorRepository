@@ -5,7 +5,7 @@
  */
 package Cards;
 
-import Simulation.Game;
+import Simulation.BelcherGame;
 import Simulation.Mana;
 
 /**
@@ -20,11 +20,11 @@ public class BurningWish extends Card {
     }
     
         
-    public void play(Game game)
+    public void play(BelcherGame belcherGame)
     {        
-        game.getCardsInHand().remove(this);
-        game.getCardsInExile().add(this);
-        game.getCardsInHand().add(new EmptyTheWarrens());
+        belcherGame.getCardsInHand().remove(this);
+        belcherGame.getCardsInExile().add(this);
+        belcherGame.getCardsInHand().add(new EmptyTheWarrens());
 
     }
     

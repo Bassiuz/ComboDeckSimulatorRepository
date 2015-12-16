@@ -5,7 +5,7 @@
  */
 package Cards;
 
-import Simulation.Game;
+import Simulation.BelcherGame;
 import Simulation.Mana;
 
 /**
@@ -19,10 +19,10 @@ public class EmptyTheWarrens extends Card {
         this.setCardName("EmptyTheWarrens");
     }
     
-    public int play(Game game)
+    public int play(BelcherGame belcherGame)
     {
-        game.uppStormCount();
-        return game.getStormCount() * 2;
+        belcherGame.uppStormCount();
+        return belcherGame.getStormCount() * 2;
     }
     
       @Override      public Mana getColor()

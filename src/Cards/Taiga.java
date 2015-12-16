@@ -5,7 +5,7 @@
  */
 package Cards;
 
-import Simulation.Game;
+import Simulation.BelcherGame;
 import Simulation.Mana;
 
 /**
@@ -21,42 +21,42 @@ public class Taiga extends Card {
         this.setCardName("Taiga");
     }
     
-     public void play(Game game)
+     public void play(BelcherGame belcherGame)
     {
-        game.getCardsInHand().remove(this);
-        game.getCardsInPlay().add(this);
+        belcherGame.getCardsInHand().remove(this);
+        belcherGame.getCardsInPlay().add(this);
     }
     
-    public void activate(Game game, Mana manaColorOfChoice)
+    public void activate(BelcherGame belcherGame, Mana manaColorOfChoice)
     {
         tap = true;
          switch (manaColorOfChoice) {
             case BLACK:
-                game.setBlackMana(game.getBlackMana() + 1);
+                belcherGame.setBlackMana(belcherGame.getBlackMana() + 1);
                 break;
                 
             case BLUE:
-                game.setBlueMana(game.getBlueMana() + 1);
+                belcherGame.setBlueMana(belcherGame.getBlueMana() + 1);
 
                 break;
                 
             case GREEN:
-                game.setGreenMana(game.getGreenMana() + 1);
+                belcherGame.setGreenMana(belcherGame.getGreenMana() + 1);
 
                 break;
                                 
             case RED:
-                game.setRedMana(game.getRedMana() + 1);
+                belcherGame.setRedMana(belcherGame.getRedMana() + 1);
 
                 break;
           
             case WHITE:
-                game.setWhiteMana(game.getWhiteMana() + 1);
+                belcherGame.setWhiteMana(belcherGame.getWhiteMana() + 1);
 
                 break;
                                 
             case COLORLESS:
-                game.setColorlessMana(game.getColorlessMana() + 1);
+                belcherGame.setColorlessMana(belcherGame.getColorlessMana() + 1);
 
                 break;
                            

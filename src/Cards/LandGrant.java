@@ -5,7 +5,7 @@
  */
 package Cards;
 
-import Simulation.Game;
+import Simulation.BelcherGame;
 import Simulation.Mana;
 
 /**
@@ -19,16 +19,16 @@ public class LandGrant extends Card {
         this.setCardName("LandGrant");
     }
     
-        public void play(Game game)
-    {        game.uppStormCount();
+        public void play(BelcherGame belcherGame)
+    {        belcherGame.uppStormCount();
 
         //PAY MANA IN ALGORITHM
-        game.getCardsInHand().remove(this);
-        game.getCardsInGraveyard().add(this);
+        belcherGame.getCardsInHand().remove(this);
+        belcherGame.getCardsInGraveyard().add(this);
         
         
         Card c = null;
-        for (Card card : game.getCardsInDeck())
+        for (Card card : belcherGame.getCardsInDeck())
         {
             if (card.getCardName().equals("Taiga"))
             {
@@ -36,15 +36,15 @@ public class LandGrant extends Card {
             }
         }
         
-        game.getCardsInHand().add(c);
-        game.getCardsInDeck().remove(c);
+        belcherGame.getCardsInHand().add(c);
+        belcherGame.getCardsInDeck().remove(c);
 
     }
-        public void playWithoutFindingAnything(Game game)
+        public void playWithoutFindingAnything(BelcherGame belcherGame)
         {
-            game.uppStormCount();
-                game.getCardsInHand().remove(this);
-                game.getCardsInGraveyard().add(this);
+            belcherGame.uppStormCount();
+                belcherGame.getCardsInHand().remove(this);
+                belcherGame.getCardsInGraveyard().add(this);
         }
         
                       @Override      public Mana getColor()

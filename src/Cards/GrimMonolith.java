@@ -5,7 +5,7 @@
  */
 package Cards;
 
-import Simulation.Game;
+import Simulation.BelcherGame;
 import Simulation.Mana;
 
 /**
@@ -21,19 +21,19 @@ public class GrimMonolith extends Card {
         this.setCardName("GrimMonolith");
     }
     
-    public void play(Game game)
-    {        game.uppStormCount();
+    public void play(BelcherGame belcherGame)
+    {        belcherGame.uppStormCount();
 
         //PAY MANA IN ALGORITHM
-        game.getCardsInHand().remove(this);
-        game.getCardsInPlay().add(this);
+        belcherGame.getCardsInHand().remove(this);
+        belcherGame.getCardsInPlay().add(this);
     }
      
-    public void activate(Game game)
+    public void activate(BelcherGame belcherGame)
     {
         //ADD BELCHER LOGIC
         tap = true;
-        game.setColorlessMana(game.getColorlessMana() + 3);
+        belcherGame.setColorlessMana(belcherGame.getColorlessMana() + 3);
         
     }
 

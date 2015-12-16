@@ -14,7 +14,7 @@ import java.util.Random;
  *
  * @author Bash
  */
-public class Game {
+public class BelcherGame {
 
     private int redMana;
     private int blueMana;
@@ -40,32 +40,32 @@ public class Game {
     private boolean triedToPlayLandGrant = false;
     private boolean triedToPlayChromeMox = false;
 
-    Game()
+    BelcherGame()
     {
         
     }
 
-    Game(Game game) {
-        this.redMana = game.getRedMana();
-        this.blueMana = game.getBlueMana();
-        this.blackMana = game.getBlackMana();
-        this.greenMana = game.getGreenMana();
-        this.whiteMana = game.getWhiteMana();
-        this.colorlessMana = game.getColorlessMana();
+    BelcherGame(BelcherGame belcherGame) {
+        this.redMana = belcherGame.getRedMana();
+        this.blueMana = belcherGame.getBlueMana();
+        this.blackMana = belcherGame.getBlackMana();
+        this.greenMana = belcherGame.getGreenMana();
+        this.whiteMana = belcherGame.getWhiteMana();
+        this.colorlessMana = belcherGame.getColorlessMana();
         
-        this.landDropMade = game.isLandDropMade();
-        this.stormCount = game.getStormCount();
-        this.goblinTokens = game.getGoblinTokens();
-        cardsInHand.addAll(game.getCardsInHand());
-        cardsInDeck.addAll(game.getCardsInDeck());
-        cardsInPlay.addAll(game.getCardsInPlay());
-        cardsInGraveyard.addAll(game.getCardsInGraveyard());
-        cardsInExile.addAll(game.getCardsInExile());
+        this.landDropMade = belcherGame.isLandDropMade();
+        this.stormCount = belcherGame.getStormCount();
+        this.goblinTokens = belcherGame.getGoblinTokens();
+        cardsInHand.addAll(belcherGame.getCardsInHand());
+        cardsInDeck.addAll(belcherGame.getCardsInDeck());
+        cardsInPlay.addAll(belcherGame.getCardsInPlay());
+        cardsInGraveyard.addAll(belcherGame.getCardsInGraveyard());
+        cardsInExile.addAll(belcherGame.getCardsInExile());
         
-        this.lifeTotal = game.getLifeTotal();
-        this.opponentLifeTotal = game.getOpponentLifeTotal();
-        this.triedToPlayLandGrant = game.isTriedToPlayLandGrant();
-        this.triedToPlayChromeMox = game.isTriedToPlayChromeMox();
+        this.lifeTotal = belcherGame.getLifeTotal();
+        this.opponentLifeTotal = belcherGame.getOpponentLifeTotal();
+        this.triedToPlayLandGrant = belcherGame.isTriedToPlayLandGrant();
+        this.triedToPlayChromeMox = belcherGame.isTriedToPlayChromeMox();
 
     }
 

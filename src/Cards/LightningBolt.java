@@ -5,7 +5,7 @@
  */
 package Cards;
 
-import Simulation.Game;
+import Simulation.BelcherGame;
 
 /**
  *
@@ -18,12 +18,12 @@ public class LightningBolt extends Card{
         this.setCardName("LightningBolt");
     }
     
-    public void play(Game game)
+    public void play(BelcherGame belcherGame)
     {
-        game.getCardsInHand().remove(this);
-        game.getCardsInGraveyard().add(this);
-        game.setRedMana(game.getRedMana() - 1);
-        game.setOpponentLifeTotal(game.getOpponentLifeTotal() - 3);
+        belcherGame.getCardsInHand().remove(this);
+        belcherGame.getCardsInGraveyard().add(this);
+        belcherGame.setRedMana(belcherGame.getRedMana() - 1);
+        belcherGame.setOpponentLifeTotal(belcherGame.getOpponentLifeTotal() - 3);
     }
 
 }

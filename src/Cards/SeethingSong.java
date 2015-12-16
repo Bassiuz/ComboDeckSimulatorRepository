@@ -5,7 +5,7 @@
  */
 package Cards;
 
-import Simulation.Game;
+import Simulation.BelcherGame;
 import Simulation.Mana;
 
 /**
@@ -19,12 +19,12 @@ public class SeethingSong extends Card {
         this.setCardName("SeethingSong");
     }
     
-    public void play(Game game)
-    {        game.uppStormCount();
+    public void play(BelcherGame belcherGame)
+    {        belcherGame.uppStormCount();
 
-        game.getCardsInHand().remove(this);
-        game.getCardsInGraveyard().add(this);
-        game.setRedMana(game.getRedMana() + 2);
+        belcherGame.getCardsInHand().remove(this);
+        belcherGame.getCardsInGraveyard().add(this);
+        belcherGame.setRedMana(belcherGame.getRedMana() + 2);
     }
     
                   @Override      public Mana getColor()

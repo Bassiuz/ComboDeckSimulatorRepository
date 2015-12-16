@@ -5,7 +5,7 @@
  */
 package Cards;
 
-import Simulation.Game;
+import Simulation.BelcherGame;
 import Simulation.Mana;
 
 /**
@@ -19,48 +19,48 @@ public class LionsEyeDiamond extends Card {
         this.setCardName("LionsEyeDiamond");
     }
     
-        public void play(Game game)
-    {        game.uppStormCount();
+        public void play(BelcherGame belcherGame)
+    {        belcherGame.uppStormCount();
 
         //PAY MANA IN ALGORITHM
-        game.getCardsInHand().remove(this);
-        game.getCardsInPlay().add(this);
+        belcherGame.getCardsInHand().remove(this);
+        belcherGame.getCardsInPlay().add(this);
     }
      
-public void activate(Game game, Mana manaColorOfChoice)
+public void activate(BelcherGame belcherGame, Mana manaColorOfChoice)
     {
-        game.getCardsInPlay().remove(this);
-        game.getCardsInGraveyard().add(this);
-        game.getCardsInGraveyard().addAll(game.getCardsInHand());
-        game.getCardsInHand().clear();
+        belcherGame.getCardsInPlay().remove(this);
+        belcherGame.getCardsInGraveyard().add(this);
+        belcherGame.getCardsInGraveyard().addAll(belcherGame.getCardsInHand());
+        belcherGame.getCardsInHand().clear();
         
          switch (manaColorOfChoice) {
             case BLACK:
-                game.setBlackMana(game.getBlackMana() + 3);
+                belcherGame.setBlackMana(belcherGame.getBlackMana() + 3);
                 break;
                 
             case BLUE:
-                game.setBlueMana(game.getBlueMana() + 3);
+                belcherGame.setBlueMana(belcherGame.getBlueMana() + 3);
 
                 break;
                 
             case GREEN:
-                game.setGreenMana(game.getGreenMana() + 3);
+                belcherGame.setGreenMana(belcherGame.getGreenMana() + 3);
 
                 break;
                                 
             case RED:
-                game.setRedMana(game.getRedMana() + 3);
+                belcherGame.setRedMana(belcherGame.getRedMana() + 3);
 
                 break;
           
             case WHITE:
-                game.setWhiteMana(game.getWhiteMana() + 3);
+                belcherGame.setWhiteMana(belcherGame.getWhiteMana() + 3);
 
                 break;
                                 
             case COLORLESS:
-                game.setColorlessMana(game.getColorlessMana() + 3);
+                belcherGame.setColorlessMana(belcherGame.getColorlessMana() + 3);
 
                 break;
                            

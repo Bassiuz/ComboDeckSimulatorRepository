@@ -5,7 +5,7 @@
  */
 package Cards;
 
-import Simulation.Game;
+import Simulation.BelcherGame;
 
 /**
  *
@@ -19,14 +19,14 @@ public class AncestrallRecall extends Card{
         this.setCardName("AncestrallRecall");
     }
     
-    public void play(Game game)
+    public void play(BelcherGame belcherGame)
     {
-        game.getCardsInHand().remove(this);
-        game.getCardsInGraveyard().add(this);
-        game.setBlueMana(game.getBlueMana() - 1);
-        game.drawCard();
-        game.drawCard();
-        game.drawCard();
+        belcherGame.getCardsInHand().remove(this);
+        belcherGame.getCardsInGraveyard().add(this);
+        belcherGame.setBlueMana(belcherGame.getBlueMana() - 1);
+        belcherGame.drawCard();
+        belcherGame.drawCard();
+        belcherGame.drawCard();
 
     }
     
